@@ -56,6 +56,14 @@ class CarddataController extends Controller
             return $user;
     }
 
+    public function search($userid)
+    {
+        $result = Carddata::where('userid',$userid);
+        $result = $result->orderBy('updated_at', 'desc')->first();
+
+        return $result;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

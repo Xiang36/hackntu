@@ -20,6 +20,9 @@ header('Access-Control-Allow-Credentials: true');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/data', function (){
-    return "data";
-});
+Route::resource('/user','UserController');
+Route::resource('/task','TaskController');
+Route::resource('/userdata','UserDataController');
+Route::resource('/carddata','CarddataController');
+Route::resource('/data', 'MapController');
+Route::get('/getdata/{userid}','CarddataController@search');

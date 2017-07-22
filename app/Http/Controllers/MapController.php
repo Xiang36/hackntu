@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Task;
 
-class TaskController extends Controller
+class MapController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request )
     {
         //
-        return Task::all();
+//        $uri = $request->path('http://data.taipei/youbike');
+//        $url = $request->url();
+//        return $uri;
+//        return "test";
     }
 
     /**
@@ -26,7 +28,6 @@ class TaskController extends Controller
     public function create()
     {
         //
-
     }
 
     /**
@@ -38,9 +39,8 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         //
-        return Task::create($request->all());
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -50,11 +50,6 @@ class TaskController extends Controller
     public function show($id)
     {
         //
-        $task = Task::find($id);
-        if( $task == null )
-            return '無此資料';
-        else
-            return $task;
     }
 
     /**
